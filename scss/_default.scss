@@ -1,0 +1,17 @@
+body, html, div, ul, li, a, p, td, footer, header, article, nav, main {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+div, footer, header, article, nav, main, img {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+input {
+  outline: none;
+}

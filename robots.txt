@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /scripts/
+Disallow: /design/
+Disallow: /catalog/
+Disallow: /faq/
+Host: crochettoys.lv

@@ -1,0 +1,8 @@
+*~
+catalog/
+faq/
+scripts/db_con.php
+*admin*
+*.png
+*.jpg
+nbproject/

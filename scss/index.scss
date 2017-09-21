@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+@import "default";
+@import "header";
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+  .section {
+    width: 31%;
+    min-width: 300px;
+    flex-grow: 1;
+    margin: 0 .7%;
+    overflow: hidden;
+    &:hover img {
+      opacity: .7;
+    }
+    &:hover div {
+      color: #D619CE;
+    }
+  }
+    .sec-img {
+      width: 100%;
+      border: 2px solid #ccc;
+      transition: all .5s ease-in-out;
+    }
+    .sec-title {
+      padding: 2px 20px 15px;
+      text-align: center;
+      color: #555;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 17px;
+    }
+@import "footer";
