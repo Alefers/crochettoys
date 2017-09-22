@@ -9,9 +9,8 @@ if (mysqli_num_rows($sql_abme)) {
    $abme = '';
 }
 ?>
-<div id="context">
-   <div id="abme_box">
-      <img src="design/abme.jpg">
+      <main>
+        <img src="design/abme.jpg">
 <?php
 $lines = explode("\n", $abme);
 foreach ($lines as $value) {
@@ -20,8 +19,6 @@ foreach ($lines as $value) {
    }
 }
 ?>
-   </div>
-   <div id="before_footer"></div>
-</div>
+      </main>
 <?php
 include 'scripts/footer.php';

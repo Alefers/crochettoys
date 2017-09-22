@@ -1,7 +1,10 @@
-body, html, div, ul, li, a, p, td, footer, header, article, nav, main {
+body, html, div, ul, li, a, p, td, footer, header, article, nav, main, h1, h2 {
   margin: 0;
   padding: 0;
   font: inherit;
+}
+html, body {
+  height: 100%;
 }
 div, footer, header, article, nav, main, img {
   box-sizing: border-box;

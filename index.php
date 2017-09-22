@@ -10,8 +10,8 @@ if (mysqli_num_rows($sql_cat)) {
     $cat_id = $row_cat['cat_id'];
 ?>
       <a class="section" href="catalog.php?c=<?php echo $cat_id; ?>">
-        <img class="sec-img" src="catalog/cat_photo/<?php echo $cat_id; ?>.jpg" alt="crochet toy: <?php echo $row_cat['title']; ?>">
-        <div class="sec-title"><?php echo $row_cat['title']; ?></div>
+        <img class="sec-img" src="catalog/cat_photo/<?php echo $cat_id; ?>.jpg" alt="<?php echo $row_cat['title']; ?>">
+        <h2 class="sec-title"><?php echo $row_cat['title']; ?></h2>
       </a>
 <?php
    }

@@ -1,7 +1,12 @@
 .footer {
   height: 100px;
+  width: 100%;
+  padding: 0 20px;
   color: #777;
   font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 #back_btn {
   display: none;

@@ -10,12 +10,12 @@ main {
     width: 31%;
     min-width: 300px;
     flex-grow: 1;
-    margin: 0 .7%;
+    margin: 0 .4%;
     overflow: hidden;
     &:hover img {
       opacity: .7;
     }
-    &:hover div {
+    &:hover h2 {
       color: #D619CE;
     }
   }
@@ -25,6 +25,7 @@ main {
       transition: all .5s ease-in-out;
     }
     .sec-title {
+      display: block;
       padding: 2px 20px 15px;
       text-align: center;
       color: #555;

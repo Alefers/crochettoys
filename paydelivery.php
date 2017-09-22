@@ -11,20 +11,17 @@ if (mysqli_num_rows($sql_pad)) {
    $pad_txt = '';
 }
 ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKNCRJ97SWzrkr7E_9QJng1oWRxE92AU"></script>
-<div id="context">
-   <div id="pd_box">
-      <div id="pd_map">
-         <div id="gglmaps"></div>
-      </div>
-      <div id="pd_title">
-         <?php echo $pad_title; ?>
-      </div>
-      <div style="clear: both; height: 20px;"></div>
-      <?php echo $pad_txt; ?>
-   </div>
-</div>
-<script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKNCRJ97SWzrkr7E_9QJng1oWRxE92AU"></script>
+      <main>
+        <div class="pd-map">
+          <div id="gglmaps"></div>
+        </div>
+        <div class="pd-title">
+          <?php echo $pad_title; ?>
+        </div>
+        <?php echo $pad_txt; ?>
+      </main>
+      <script>
 function initialize() {
    var mapOptions = {
       zoom: 15,
@@ -42,6 +39,6 @@ function initialize() {
 $(document).ready(function() {
    initialize();
 });
-</script>
+      </script>
 <?php
 include 'scripts/footer.php';
