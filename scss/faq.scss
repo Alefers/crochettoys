@@ -24,7 +24,7 @@ main {
       margin: 0 1.5% 15px;
     }
     .q-box {
-      color: #333;
+      color: #444;
       width: 41%;
       margin: 0 1.5% 3%;
       h2 {
@@ -39,8 +39,11 @@ main {
     }
 @import "footer";
 @media screen and (max-width: 900px) {
-  .question:nth-child(odd) {
-    flex-direction: row;
+  .question {
+    justify-content: center;
+    &:nth-child(odd) {
+      flex-direction: row;
+    }
   }
   .q-img {
     width: 85%;

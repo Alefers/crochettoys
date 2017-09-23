@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+@import "default";
+@import "header";
+main {
+  padding: 0 12px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  img {
+    width: 40%;
+    min-width: 400px;
+  }
+}
+  .cont_txt {
+    padding: 20px 0 0 60px;
+    h1 {
+      margin-bottom: 40px;
+      font-size: 22px;
+      color: #444;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #777;
+      a {
+        color: #777;
+        &:hover {
+          color: #D619CE;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+@import "footer";
