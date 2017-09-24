@@ -2,9 +2,10 @@
 @import "default";
 @import "header";
 main {
+  padding: 0 8px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
   .section {
     width: 31%;

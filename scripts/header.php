@@ -44,12 +44,14 @@ function setActive($pageName) {
             <a href="#" class="lang_chg" data-lang="ru">RUS</a>
           </div>
         </div>
-        <nav class="nav">
-          <a href="index.php"<?php setActive('index');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
-          <a href="aboutme.php"<?php setActive('aboutme');?>><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
-          <a href="paydelivery.php"<?php setActive('paydelivery');?>><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
-          <a href="faq.php"<?php setActive('faq');?>><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
-          <a href="contacts.php"<?php setActive('contacts');?>><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
+        <nav class="hdr-nav">
+          <a href="index.php" <?php setActive('index');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
+          <a href="aboutme.php" <?php setActive('aboutme');?>><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
+          <a href="paydelivery.php" <?php setActive('paydelivery');?>><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
+          <a href="faq.php" <?php setActive('faq');?>><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
+          <a href="contacts.php" <?php setActive('contacts');?>><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
+          <a href="#" style="display: none;" <?php setActive('catalog');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
+          <a href="#" style="display: none;" <?php setActive('description');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
         </nav>
       </header>
       <div class="after-hdr-linegrey"></div>
