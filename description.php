@@ -32,34 +32,33 @@ if ($lang == 'lv') {
    $w7 = 'Оплата и доставка';
 }
 ?>
-<div id="context">
-   <div id="ctd_menu">
+      <main>
+        <nav class="cat-nav">
 <?php
 $cat_menu_sql = mysqli_query($db, "SELECT cat_id, cat_$lang AS title FROM catalog ORDER BY cat_pos");
 if (mysqli_num_rows($cat_menu_sql)) {
-   while ($cat_menu_row = mysqli_fetch_array($cat_menu_sql)) {
-      if ($cat_id == $cat_menu_row['cat_id']) {
-         $active = ' class="active_link"';
-      } else {
-         $active = '';
+  while ($cat_menu_row = mysqli_fetch_array($cat_menu_sql)) {
+    if ($cat_id == $cat_menu_row['cat_id']) {
+      $active = ' class="cat-nav-active"';
+    } else {
+      $active = '';
+    }?>
+          <a href="catalog.php?c=<?php echo $cat_menu_row['cat_id'];?>"<?php echo $active?>><?php echo $cat_menu_row['title'];?></a>
+<?php if ($cat_menu_row['cat_id'] == $cat_id) {
+        $item_menu_sql = mysqli_query($db, "SELECT i_id, i_title_$lang AS i_title FROM items WHERE cat_id = $cat_id AND i_show = 1");
+        if (mysqli_num_rows($item_menu_sql)) {?>
+          <ul>
+<?php            while ($item_menu_row = mysqli_fetch_array($item_menu_sql)) {?>
+            <li><a href="description.php?c=<?php echo $cat_id;?>&i=<?php echo $item_menu_row['i_id'];?>"><?php echo $item_menu_row['i_title'];?></a></li>
+<?php   }?>
+          </ul>
+<?php }
       }
-      echo '<a href="catalog.php?c=' . $cat_menu_row['cat_id'] . '" ' . $active . '>' . $cat_menu_row['title'] . '</a>';
-      if ($cat_menu_row['cat_id'] == $cat_id) {
-         $item_menu_sql = mysqli_query($db, "SELECT i_id, i_title_$lang AS i_title FROM items WHERE cat_id = $cat_id AND i_show = 1");
-         if (mysqli_num_rows($item_menu_sql)) {
-            echo '<ul>';
-            while ($item_menu_row = mysqli_fetch_array($item_menu_sql)) {
-               echo '<li><a href="description.php?c=' . $cat_id . '&i=' . $item_menu_row['i_id'] . '">' . $item_menu_row['i_title'] . '</a></li>';
-            }
-            echo '</ul>';
-         }
-      }
-      echo '<div class="ctd_menu_line"></div>';
    }
 }
 ?>
-   </div>
-   <div id="description">
+        </nav>
+        <section class="section">
 <?php
 if ($item_count) {
    $item_row = mysqli_fetch_array($item_sql);
@@ -143,8 +142,8 @@ if (mysqli_num_rows($con_sql)) {
    echo '<div id="des_title">Данный товар удалён или никогда не существовал.<br>Выберите в меню существующие в наличии позиции.</div>';
 }
 ?>      
-   </div>
-</div>
+        </section>
+      </main>
 <script>
    $('.des_img').click(function() {
       $('#des_ib_many').attr('src', $(this).attr('src'));
@@ -152,8 +151,8 @@ if (mysqli_num_rows($con_sql)) {
 </script>
 <?php
 if ($cat_id) {
-   echo '<a href="catalog.php?c=' . $cat_id . '" id="back_btn"></a>';
+   echo '<a href="catalog.php?c=' . $cat_id . '" class="back_btn"></a>';
 } else {
-   echo '<a href="index.php" id="back_btn"></a>';
+   echo '<a href="index.php" class="back_btn"></a>';
 }
 include 'scripts/footer.php';
