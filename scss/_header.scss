@@ -19,8 +19,10 @@ body {
   justify-content: space-between;
 }
   .logo {
-    width: 311px;
-    margin-bottom: 5px;
+    width: 30%;
+    flex-grow: 1;
+    max-width: 311px;
+    margin: 0 15px 5px 0;
     cursor: pointer;
   }
   .social {
@@ -30,6 +32,7 @@ body {
     width: 102px;
   }
     .fb, .in {
+      border-radius: 50%;
       height: 46px;
       width: 46px;
     }
@@ -45,21 +48,81 @@ body {
         background-position: bottom left;
       }
     }
+    .hamburger {
+      display: none;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      cursor: pointer;
+      position: relative;
+      padding: 13px 10px;
+      height: 46px;
+      width: 46px;
+      border-radius: 50%;
+      background-color: #d1d1d1;
+      &:hover .ham-line {
+        background-color: #d656d0;
+      }
+    }
+      .ham-line {
+        height: 4px;
+        border-radius: 2px;
+        background-color: #fff;
+        transition: all .2s ease-in-out;
+      }
+      .ham-nav {
+        position: absolute;
+        right: 0;
+        top: 52px;
+        background-color: rgba(120, 120, 120, .7);
+        border: 2px solid #555;
+        z-index: 10;
+      }
+        .ham-nav > a {
+          display: block;
+          width: 200px;
+          text-align: center;
+          color: #fff;
+          padding: 5px;
+          border-bottom: 2px solid #555;
+          &:hover {
+            color: #D619CE;
+            background-color: #d5d1c5;
+          }
+        }
+        .ham-lang {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          a {
+            display: block;
+            width: 50%;
+            text-align: center;
+            color: #fff;
+            padding: 5px;
+            &:hover {
+              color: #D619CE;
+              background-color: #d5d1c5;
+            }
+            &:first-of-type {
+              border-right: 2px solid #555;
+            }
+          }
+        }
   .lang {
     margin: 20px 0 0 0;
     text-align: center;
-  }
-    .lang_chg {
+    a {
       display: inline-block;
       font-size: 18px;
       color: #666;
       cursor: pointer;
       margin: 0 5px;
+      &:hover {
+        color: #D619CE;
+        text-decoration: underline;
+      }
     }
-    .lang_chg:hover {
-      color: #D619CE;
-      text-decoration: underline;
-    }
+  }
   .hdr-nav {
     width: 100%;
     display: flex;
@@ -87,4 +150,21 @@ body {
   color: #FFF;
   padding: 5px 12px;
   font-size: 18px;
+}
+@media screen and  (max-width: 720px) {
+  .social {
+    width: 168px;
+  }
+  .lang {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .hdr-nav {
+    display: none;
+  }
+  .ham-nav {
+    display: none;
+  }
 }

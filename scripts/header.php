@@ -38,7 +38,24 @@ function setActive($pageName) {
         <div class="social-lang-box">
           <div class="social">
             <a href="https://www.facebook.com/crochettoyslv/" class="fb" target="_blank"></a>
-            <a href="https://www.instagram.com/crochettoys_lv/" class="in" target="_blank"></a></div>
+            <a href="https://www.instagram.com/crochettoys_lv/" class="in" target="_blank"></a>
+            <div class="hamburger">
+              <div class="ham-line"></div>
+              <div class="ham-line"></div>
+              <div class="ham-line"></div>
+              <div class="ham-nav">
+                <a href="index.php"><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
+                <a href="aboutme.php"><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
+                <a href="paydelivery.php"><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
+                <a href="faq.php"><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
+                <a href="contacts.php"><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
+                <div class="ham-lang">
+                  <a href="#" class="lang_chg" data-lang="lv">LAT</a>
+                  <a href="#" class="lang_chg" data-lang="ru">RUS</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="lang">
             <a href="#" class="lang_chg" data-lang="lv">LAT</a>
             <a href="#" class="lang_chg" data-lang="ru">RUS</a>
@@ -70,5 +87,8 @@ $('.lang_chg').click(function(e) {
       }
     }
   );
+});
+$('.hamburger').click(function() {
+  $('.ham-nav').toggle('slow');
 });
       </script>

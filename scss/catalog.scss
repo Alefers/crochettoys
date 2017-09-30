@@ -22,6 +22,7 @@ main {
       border-top: 1px solid #D5D1C5;
       &:hover {
         color: #D619CE;
+        background-color: #EEE;
       }
       &:last-of-type {
         border-bottom: 1px solid #D5D1C5;
@@ -57,11 +58,16 @@ main {
         border: 2px solid #DDD;
         padding: 4px 4px 6px;
         cursor: pointer;
+        transition: all .5s ease-in-out;
         &:hover {
           border-color: #E593E6;
           box-shadow: 0 0 15px #555;
+          img {
+            opacity: .5;
+          }
         }
         img {
+          transition: all .5s ease-in-out;
           width: 100%;
         }
         h3 {
