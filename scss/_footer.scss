@@ -1,12 +1,15 @@
 .footer {
   min-height: 100px;
   width: 100%;
-  padding: 0 20px 15px;
+  padding: 0 0 15px;
   color: #777;
   font-size: 14px;
   position: absolute;
   bottom: 0;
   left: 0;
+  p {
+    padding: 0 27px;
+  }
 }
 #back_btn {
   display: none;

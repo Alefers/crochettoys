@@ -4,7 +4,7 @@ include 'scripts/header.php';
 ?>
       <main>
         <img src="design/cont.jpg" alt="Вероника Буеверова">
-        <div class="cont_txt">
+        <div class="cont-txt">
           <h1>Veronika</h1>
           <p>
             tel: <a href="tel:+37125534036">+371 25534036</a>

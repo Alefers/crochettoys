@@ -1,5 +1,6 @@
       <footer class="footer">
         <div class="after-hdr-linegrey"></div>
+        <p>
 <?php
 $sql_ftr = mysqli_query($db, "SELECT * FROM other WHERE id = 1");
 if (mysqli_num_rows($sql_ftr)) {
@@ -10,6 +11,7 @@ if (mysqli_num_rows($sql_ftr)) {
 }
 echo $ftr;
 ?>
+        </p>
       </footer>
 <?php
 if (isset($_SESSION['admin'])) {
