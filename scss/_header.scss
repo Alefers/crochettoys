@@ -4,7 +4,9 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 .wrapper {
-  padding-bottom: 120px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   padding-top: 15px;
   margin: 0 auto;
   min-height: 100%;
@@ -93,14 +95,14 @@ body {
   align-items: center;
   width: 100%;
   padding: 0 15px;
-  height: 60px;
+  height: 42px;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
   background-color: #fff;
-  border-bottom: 2px solid #ccc;
-  box-shadow: 0 1px 3px 1px #d5d1c5;
+  border-bottom: 1px solid #aaa;
+  box-shadow: 0 0 1px 0 #aaa;
 }
   .ham-box {
     width: 68px;
@@ -128,23 +130,30 @@ body {
       }
       .ham-nav {
         display: none;
-        position: absolute;
-        left: -15px;
-        top: 46px;
-        background-color: rgba(120, 120, 120, .7);
-        border: 2px solid #555;
-        z-index: 10;
+        position: fixed;
+        left: 0;
+        top: 42px;
+        bottom: 0;
+        width: 300px;
+        background-color: rgba(255, 255, 255, .9);
+        border-right: 2px solid #eee;
+        z-index: 1;
       }
         .ham-nav > a {
           display: block;
-          width: 300px;
+          width: 100%;
           text-align: center;
-          color: #fff;
-          padding: 5px;
-          border-bottom: 2px solid #555;
+          color: #555;
+          padding: 10px 0;
+          border-bottom: 1px solid #d5d1c5;
+          overflow: hidden;
+          margin: 0 auto;
           &:hover {
             color: #D619CE;
             background-color: #d5d1c5;
+          }
+          &:first-of-type {
+            border-top: 1px solid #d5d1c5;
           }
         }
         .ham-lang {
@@ -155,19 +164,19 @@ body {
             display: block;
             width: 50%;
             text-align: center;
-            color: #fff;
-            padding: 5px;
+            color: #555;
+            padding: 10px 0;
             &:hover {
               color: #D619CE;
               background-color: #d5d1c5;
             }
             &:first-of-type {
-              border-right: 2px solid #555;
+              border-right: 1px solid #d5d1c5;
             }
           }
         }
   .mob-logo {
-    width: 150px;
+    width: 120px;
   }
   .mob-social {
     display: flex;
@@ -204,13 +213,14 @@ body {
 }
 main {
   margin: 0 15px;
+  flex-grow: 1;
 }
 @media screen and  (max-width: 720px) {
   body {
     margin: 0;
   }
   .wrapper {
-    margin-top: 60px;
+    margin-top: 42px;
   }
   .header {
     display: none;
@@ -218,7 +228,13 @@ main {
   .mobil-header {
     display: flex;
   }
+    .ham-box {
+      width: 30px;
+    }
   .after-hdr-linegrey {
     text-align: center;
+  }
+  main {
+    padding: 0 6px;
   }
 }

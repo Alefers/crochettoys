@@ -49,7 +49,7 @@ if (mysqli_num_rows($cat_menu_sql)) {
         if (mysqli_num_rows($item_menu_sql)) {?>
           <ul class="cat-subnav">
 <?php            while ($item_menu_row = mysqli_fetch_array($item_menu_sql)) {?>
-            <li><a href="description.php?c=<?php echo $cat_id;?>&i=<?php echo $item_menu_row['i_id'];?>"><?php echo $item_menu_row['i_title'];?></a></li>
+            <li <?php if ($item_id == $item_menu_row['i_id']) echo 'class="active-item"';?>><a href="description.php?c=<?php echo $cat_id;?>&i=<?php echo $item_menu_row['i_id'];?>"><?php echo $item_menu_row['i_title'];?></a></li>
 <?php   }?>
           </ul>
 <?php }

@@ -8,7 +8,7 @@ main {
     float: left;
     width: 50%;
     max-width: 400px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
   }
   p {
     margin-bottom: 15px;
@@ -17,3 +17,10 @@ main {
   }
 }
 @import "footer";
+@media screen and  (max-width: 450px) {
+  main img {
+    float: none;
+    width: 100%;
+    margin: 0 auto 15px;
+  }
+}

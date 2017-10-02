@@ -45,7 +45,7 @@ main {
       li a {
         display: block;
         padding: 6px 10px 6px 3px;
-        color: #333;
+        color: #555;
         font-size: 16px;
         overflow: hidden;
         white-space: nowrap;
@@ -56,6 +56,21 @@ main {
         }
       }
     }
+      .active-item {
+        font-weight: bold;
+        &:after {
+          content: "";
+          display: block;
+          height: 5px;
+          width: 5px;
+          border-top: 1px solid #555;
+          border-right: 1px solid #555;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 12px;
+          right: 7px;
+        }
+      }
     .cat-nav > a {
       display: block;
       padding: 7px 10px;
@@ -80,7 +95,7 @@ main {
     }
   .section {
     width: 25%;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 500px;
     flex-grow: 1;
     margin: 0 0 0 30px;
@@ -111,7 +126,7 @@ main {
     }
       .des-ib {
         width: 78%;
-        border: 2px solid #eee;
+        border: 1px solid #eee;
         flex-grow: 1;
       }
       .des-ib-links {
@@ -120,7 +135,7 @@ main {
         img {
           width: 100%;
           margin-bottom: 4px;
-          border: 2px solid #eee;
+          border: 1px solid #eee;
           cursor: pointer;
         }
       }
@@ -182,6 +197,24 @@ main {
   .section {
     margin: 0;
   }
+    .des-images-box {
+      flex-direction: column;
+    }
+      .des-ib {
+          width: 100%;
+        }
+      .des-ib-links {
+        width: 100%;
+        margin: 2% 0 0 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: row nowrap;
+        img {
+          width: 19%;
+          margin-right: 4px;
+        }
+      }
   .back_btn {
     display: block;
   }

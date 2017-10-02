@@ -39,15 +39,15 @@ function setActive($pageName) {
             <div class="ham-line"></div>
             <div class="ham-line"></div>
             <div class="ham-nav">
+              <div class="ham-lang">
+                <a href="#" class="lang_chg" data-lang="lv">LAT</a>
+                <a href="#" class="lang_chg" data-lang="ru">RUS</a>
+              </div>
               <a href="index.php"><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
               <a href="aboutme.php"><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
               <a href="paydelivery.php"><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
               <a href="faq.php"><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
               <a href="contacts.php"><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
-              <div class="ham-lang">
-                <a href="#" class="lang_chg" data-lang="lv">LAT</a>
-                <a href="#" class="lang_chg" data-lang="ru">RUS</a>
-              </div>
             </div>
           </div>
         </div>
@@ -85,6 +85,16 @@ function setActive($pageName) {
 $(document).ready(function() {
   $('.after-hdr-linegrey').html('<span>' + $('.active').html() + '</span>');
 });
+$(document).click(function (e) {
+  var nav = $('.ham-nav');
+  if (nav.has(e.target).length === 0 && nav.css('display') == 'block'){
+    nav.hide('slow');
+  } else {
+    if ($(e.target).hasClass('hamburger') || $(e.target).hasClass('ham-line')) {
+      nav.show('slow');
+    }
+  }
+});
 $('.lang_chg').click(function(e) {
   e.preventDefault();
   $.post(
@@ -96,8 +106,5 @@ $('.lang_chg').click(function(e) {
       }
     }
   );
-});
-$('.hamburger').click(function() {
-  $('.ham-nav').toggle('slow');
 });
       </script>

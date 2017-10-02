@@ -35,7 +35,7 @@ main {
     }
   .section {
     width: 25%;
-    min-width: 300px;
+    min-width: 270px;
     flex-grow: 1;
     margin: 0 0 0 30px;
   }
@@ -54,24 +54,25 @@ main {
         display: block;
         margin: 0 4px 15px;
         width: 180px;
+        max-width: 300px;
         flex-grow: 1;
-        border: 2px solid #DDD;
+        border: 1px solid #DDD;
         padding: 4px 4px 6px;
         cursor: pointer;
-        transition: all .5s ease-in-out;
+        transition: all .3s ease-in-out;
         &:hover {
           border-color: #E593E6;
           box-shadow: 0 0 15px #555;
           img {
-            opacity: .5;
+            opacity: .7;
           }
         }
         img {
-          transition: all .5s ease-in-out;
+          transition: all .3s ease-in-out;
           width: 100%;
         }
         h3 {
-          padding: 5px 5px 0;
+          padding: 5px 5px 3px;
           margin: 0;
           color: #555;
           font-size: 16px;

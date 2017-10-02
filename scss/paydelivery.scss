@@ -11,7 +11,7 @@ main {
     width: 38%;
     height: 270px;
     margin: 0 0 20px;
-    min-width: 300px;
+    min-width: 250px;
   }
     #gglmaps {
       height: 100%;
@@ -42,6 +42,9 @@ main {
 @media screen and  (max-width: 760px) {
   main {
     justify-content: center;
+  }
+  .pd-map {
+    width: 60%;
   }
   .pd-title {
     width: 80%;
