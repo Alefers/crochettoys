@@ -10,7 +10,7 @@ if (mysqli_num_rows($sql_abme)) {
 }
 ?>
       <main>
-        <img src="design/abme.jpg">
+        <img src="/design/abme.jpg" alt="Вероника Беда / Veronika Beda">
 <?php
 $lines = explode("\n", $abme);
 foreach ($lines as $value) {

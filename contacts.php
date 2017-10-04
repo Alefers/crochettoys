@@ -3,7 +3,7 @@ $page = 'contacts';
 include 'scripts/header.php';
 ?>
       <main>
-        <img src="design/cont.jpg" alt="Вероника Буеверова">
+        <img src="/design/cont.jpg" alt="Вероника Беда / Veronika Beda">
         <div class="cont-txt">
           <h1>Veronika</h1>
           <p>

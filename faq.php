@@ -16,7 +16,7 @@ $sql_faq = mysqli_query($db, "SELECT faq_id, faq_title_$lang AS title, faq_txt_$
 if (mysqli_num_rows($sql_faq)) {
   while ($row_faq = mysqli_fetch_array($sql_faq)) {?>
         <article class="question">
-          <img class="q-img" src="faq/<?php echo $row_faq['faq_id'];?>.jpg">
+          <img class="q-img" src="/faq/<?php echo $row_faq['faq_id'];?>.jpg">
           <div class="q-box">
             <h2><?php echo $row_faq['title'];?></h2>
             <?php printP($row_faq['txt']);?>

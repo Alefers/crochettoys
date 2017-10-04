@@ -23,7 +23,7 @@ if (mysqli_num_rows($cat_menu_sql)) {
     } else {
       $active = '';
     }?>
-          <a href="catalog.php?c=<?php echo $cat_menu_row['cat_id'];?>"<?php echo $active;?>><?php echo $cat_menu_row['title'];?></a>
+          <a href="/catalog.php?lang=<?php echo $lang;?>&c=<?php echo $cat_menu_row['cat_id'];?>"<?php echo $active;?>><?php echo $cat_menu_row['title'];?></a>
 <?php }}?>
         </nav>
         <section class="section">
@@ -50,8 +50,8 @@ if ($cat_count) {
         $img = $img_row['img_id'];
       }
 ?>
-            <a class="cat-item" href="description.php?c=<?php echo $cat_id;?>&i=<?php echo $item_id;?>">
-              <img src="catalog/<?php echo $img;?>.jpg" alt="<?php echo $item_row['i_title'];?>">
+            <a class="cat-item" href="/description.php?lang=<?php echo $lang;?>&c=<?php echo $cat_id;?>&i=<?php echo $item_id;?>">
+              <img src="/catalog/<?php echo $img;?>.jpg" alt="<?php echo $item_row['i_title'];?>">
               <h3>
                 <?php echo $item_row['i_title'];?>
               </h3>
@@ -68,7 +68,6 @@ if ($cat_count) {
 ?>
           </div> 
         </section>
-        <a href="index.php" class="back_btn"></a>
       </main>
 <?php
 include 'scripts/footer.php';

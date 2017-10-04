@@ -43,13 +43,13 @@ if (mysqli_num_rows($cat_menu_sql)) {
     } else {
       $active = '';
     }?>
-          <a href="catalog.php?c=<?php echo $cat_menu_row['cat_id'];?>"<?php echo $active?>><?php echo $cat_menu_row['title'];?></a>
+          <a href="catalog.php?lang=<?php echo $lang;?>&c=<?php echo $cat_menu_row['cat_id'];?>"<?php echo $active?>><?php echo $cat_menu_row['title'];?></a>
 <?php if ($cat_menu_row['cat_id'] == $cat_id) {
         $item_menu_sql = mysqli_query($db, "SELECT i_id, i_title_$lang AS i_title FROM items WHERE cat_id = $cat_id AND i_show = 1");
         if (mysqli_num_rows($item_menu_sql)) {?>
           <ul class="cat-subnav">
 <?php            while ($item_menu_row = mysqli_fetch_array($item_menu_sql)) {?>
-            <li <?php if ($item_id == $item_menu_row['i_id']) echo 'class="active-item"';?>><a href="description.php?c=<?php echo $cat_id;?>&i=<?php echo $item_menu_row['i_id'];?>"><?php echo $item_menu_row['i_title'];?></a></li>
+            <li <?php if ($item_id == $item_menu_row['i_id']) echo 'class="active-item"';?>><a href="description.php?lang=<?php echo $lang;?>&c=<?php echo $cat_id;?>&i=<?php echo $item_menu_row['i_id'];?>"><?php echo $item_menu_row['i_title'];?></a></li>
 <?php   }?>
           </ul>
 <?php }
@@ -79,14 +79,14 @@ if ($img_count) {?>
           <div class="des-images-box">
 <?php
   $img_row = mysqli_fetch_array($img_sql);?>
-            <img class="des-ib" src="catalog/<?php echo $img_row['img_id'];?>.jpg" alt="<?php echo $item_row['i_title'];?>">
+            <img class="des-ib" src="/catalog/<?php echo $img_row['img_id'];?>.jpg" alt="<?php echo $item_row['i_title'];?>">
 <?php
   if ($img_count > 1) {?>
             <div class="des-ib-links">
-              <img class="des-is" src="catalog/<?php echo $img_row['img_id'];?>.jpg" alt="<?php echo $item_row['i_title'];?>">
+              <img class="des-is" src="/catalog/<?php echo $img_row['img_id'];?>.jpg" alt="<?php echo $item_row['i_title'];?>">
 <?php
       while ($img_row = mysqli_fetch_array($img_sql)) {?>
-              <img class="des-is" src="catalog/<?php echo $img_row['img_id'];?>.jpg" alt="<?php echo $item_row['i_title'];?>">
+              <img class="des-is" src="/catalog/<?php echo $img_row['img_id'];?>.jpg" alt="<?php echo $item_row['i_title'];?>">
 <?php }?>
             </div>
 <?php }}?>
@@ -131,7 +131,7 @@ if (mysqli_num_rows($con_sql)) {
             <?php echo $w5;?> <a href="tel: +37125534036">+371 25 534 036</a>
          </div>
          <div class="des-buy">
-            <?php echo $w6;?> <a href="paydelivery.php">"<?php echo $w7;?>"</a>
+            <?php echo $w6;?> <a href="paydelivery.php?lang=<?php echo $lang;?>">"<?php echo $w7;?>"</a>
          </div>
       </div>
 <?php
@@ -147,9 +147,4 @@ $('.des-is').click(function() {
 });
       </script>
 <?php
-if ($cat_id) {
-   echo '<a href="catalog.php?c=' . $cat_id . '" class="back_btn"></a>';
-} else {
-   echo '<a href="index.php" class="back_btn"></a>';
-}
 include 'scripts/footer.php';

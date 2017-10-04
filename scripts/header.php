@@ -1,9 +1,30 @@
 <?php
 session_start();
-if (!isset($_SESSION['lang'])) {
-   $_SESSION['lang'] = 'lv';
+switch ($_GET['lang']) {
+  case 'ru':
+    $lang = 'ru';
+    break;
+  default:
+    $lang = 'lv';
 }
-$lang = $_SESSION['lang'];
+function setLang ($lang) {
+  echo '.php?lang=' . $lang;
+  $c = '';
+  $i = '';
+  if (isset($_GET['c'])) {
+    $c = intval($_GET['c']);
+    if ($c) {
+      echo '&c=' . $c;
+      if (isset($_GET['i'])) {
+        $i = intval($_GET['i']);
+        if ($i) {
+          echo '&i=' . $i;
+        }
+      }
+    }
+  }
+  
+}
 include 'db_con.php';
 function setActive($pageName) {
    global $page;
@@ -40,18 +61,18 @@ function setActive($pageName) {
             <div class="ham-line"></div>
             <div class="ham-nav">
               <div class="ham-lang">
-                <a href="#" class="lang_chg" data-lang="lv">LAT</a>
-                <a href="#" class="lang_chg" data-lang="ru">RUS</a>
+                <a href="<?php echo '/' . $page; setLang('lv');?>" class="lang_chg" data-lang="lv">LAT</a>
+                <a href="<?php echo '/' . $page; setLang('ru');?>" class="lang_chg" data-lang="ru">RUS</a>
               </div>
-              <a href="index.php"><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
-              <a href="aboutme.php"><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
-              <a href="paydelivery.php"><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
-              <a href="faq.php"><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
-              <a href="contacts.php"><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
+              <a href="/index.php?lang=<?php echo $lang;?>"><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
+              <a href="/aboutme.php?lang=<?php echo $lang;?>"><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
+              <a href="/paydelivery.php?lang=<?php echo $lang;?>"><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
+              <a href="/faq.php?lang=<?php echo $lang;?>"><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
+              <a href="/contacts.php?lang=<?php echo $lang;?>"><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
             </div>
           </div>
         </div>
-        <img src="design/logo_nika.png" class="mob-logo" onclick="window.location.href = 'index.php'" alt="logo">
+        <img src="/design/logo_nika.png" class="mob-logo" onclick="window.location.href = '/index.php?lang=<?php echo $lang;?>'" alt="logo">
         <div class="mob-social">
           <a href="https://www.facebook.com/crochettoyslv/" class="mob-fb" target="_blank"></a>
           <a href="https://www.instagram.com/crochettoys_lv/" class="mob-in" target="_blank"></a>
@@ -59,23 +80,23 @@ function setActive($pageName) {
       </header>
     <div class="wrapper">
       <header class="header">
-        <img src="design/logo_nika.png" class="logo" onclick="window.location.href = 'index.php'" alt="logo">
+        <img src="design/logo_nika.png" class="logo" onclick="window.location.href = '/index.php?lang=<?php echo $lang;?>'" alt="logo">
         <div class="social-lang-box">
           <div class="social">
             <a href="https://www.facebook.com/crochettoyslv/" class="fb" target="_blank"></a>
             <a href="https://www.instagram.com/crochettoys_lv/" class="in" target="_blank"></a>
           </div>
           <div class="lang">
-            <a href="#" class="lang_chg" data-lang="lv">LAT</a>
-            <a href="#" class="lang_chg" data-lang="ru">RUS</a>
+            <a href="<?php echo '/' . $page; setLang('lv');?>" class="lang_chg" data-lang="lv">LAT</a>
+            <a href="<?php echo '/' . $page; setLang('ru');?>" class="lang_chg" data-lang="ru">RUS</a>
           </div>
         </div>
         <nav class="hdr-nav">
-          <a href="index.php" <?php setActive('index');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
-          <a href="aboutme.php" <?php setActive('aboutme');?>><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
-          <a href="paydelivery.php" <?php setActive('paydelivery');?>><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
-          <a href="faq.php" <?php setActive('faq');?>><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
-          <a href="contacts.php" <?php setActive('contacts');?>><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
+          <a href="/index.php?lang=<?php echo $lang;?>" <?php setActive('index');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
+          <a href="/aboutme.php?lang=<?php echo $lang;?>" <?php setActive('aboutme');?>><?php if($lang == 'ru') {echo 'ОБО МНЕ';} else {echo 'PAR MANI';}?></a>
+          <a href="/paydelivery.php?lang=<?php echo $lang;?>" <?php setActive('paydelivery');?>><?php if($lang == 'ru') {echo 'ОПЛАТА И ДОСТАВКА';} else {echo 'KĀ PASŪTĪT';}?></a>
+          <a href="/faq.php?lang=<?php echo $lang;?>" <?php setActive('faq');?>><?php if($lang == 'ru') {echo 'ВОПРОСЫ И ОТВЕТЫ';} else {echo 'JAUTAJUMI UN ATBILDES';}?></a>
+          <a href="/contacts.php?lang=<?php echo $lang;?>" <?php setActive('contacts');?>><?php if($lang == 'ru') {echo 'КОНТАКТЫ';} else {echo 'KONTAKTI';}?></a>
           <a href="#" style="display: none;" <?php setActive('catalog');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
           <a href="#" style="display: none;" <?php setActive('description');?>><?php if($lang == 'ru') {echo 'КАТАЛОГ';} else {echo 'KATALOGS';}?></a>
         </nav>
@@ -94,17 +115,5 @@ $(document).click(function (e) {
       nav.show('slow');
     }
   }
-});
-$('.lang_chg').click(function(e) {
-  e.preventDefault();
-  $.post(
-    "scripts/lang.php",
-    {lang: $(this).data('lang')},
-    function(data) {
-      if (parseInt(data)) {
-        location.reload();
-      }
-    }
-  );
 });
       </script>
